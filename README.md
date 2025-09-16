@@ -3,7 +3,7 @@
 **Name:** Palak Soni  
 **Class:** ENTC A3  
 **PRN:** 24070123069  
-**Title:** Operator Overloading in C++  
+**Title:** Overloading in C++  
 
 ---
   
@@ -15,7 +15,13 @@ To study **Polymorphism in C++** with focus on **Overloading** concepts:
 - Operator Overloading  
 
 ---
+##  Introduction to Overloading in C++
 
+In **C++**, *overloading* allows us to define multiple functions, constructors, or operators with the same name but different parameter lists or behaviors. The main idea is to improve **code readability, flexibility, and reusability**.
+
+When an overloaded function or constructor is called, the **compiler decides which version to execute** based on the number or type of arguments passed.
+
+---
 ##  Theory  
 
 **Polymorphism in C++ allows one name to have **many forms**. Overloading is a type of **compile-time polymorphism** where functions, constructors, or operators behave differently depending on input.**
@@ -60,11 +66,7 @@ int main() {
     s3.display();
 }
 
-Name: Unknown, Age: 0
-Name: Rahul, Age: 0
-Name: Ananya, Age: 21
-
----
+```
 ---
 
 ###  Function Overloading  
@@ -79,7 +81,7 @@ Name: Ananya, Age: 21
 - Compiler decides which function to call at **compile-time**.
 
 **Code Example:-**
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -94,7 +96,7 @@ int main() {
     cout << "Sum1: " << calc.add(10,20) << endl;
     cout << "Sum2: " << calc.add(10,20,30) << endl;
 }
-
+```
 ---
 
 ###  Operator Overloading  
@@ -116,7 +118,7 @@ public:
         // operator definition
     }
 };
-
+```
 ---
 
 ## Difference Between Overloading Types  
@@ -132,65 +134,115 @@ public:
 
 ---
 
-##  Algorithms  
+##  Codes and Algorithms  
 
-### 1 Addition Using Constructor Overloading  
-1. Start.  
-2. Define class `Add` with private variable `sum`.  
-3. Create constructor with 3 integers → add & print sum (double).  
-4. Create constructor with 2 integers → add & print sum (int).  
-5. In `main()`, create objects with 2 and 3 arguments.  
-6. End.  
+### 1. **Constructor Overloading**
 
----
+#### Code Summary
+A class `Add` has multiple constructors:  
+- With 2 integers  
+- With 2 floats  
+- With 3 integers  
+Each constructor performs addition and displays the result.
 
-### 2️ Name Printing Using Constructor Overloading  
-1. Start.  
-2. Define class `Name`.  
-3. Create constructor with 2 chars → print together.  
-4. Create constructor with 2 strings → concatenate & print.  
-5. In `main()`, create objects with chars and strings.  
-6. End.  
+#### Algorithm
+1. Define class `Add`.  
+2. Overload the constructors with different parameter lists.  
+3. In each constructor, perform addition of parameters and print result.  
+4. In `main()`, create objects with different sets of arguments.  
+
 
 ---
 
-### 3️ Calculator Using Function Overloading  
-1. Start.  
-2. Define function `calc(int,int)` → add numbers.  
-3. Define function `calc(int,int,int)` → subtract numbers.  
-4. In `main()`, call both versions.  
-5. End.  
+### 2. **Constructor Overloading with Characters and Strings**
+
+#### Code Summary
+Class `Name` has two constructors:  
+- Accepts two characters.  
+- Accepts two strings.  
+Demonstrates printing and concatenation.
+
+#### Algorithm
+1. Define class `Name` with two constructors.  
+2. Constructor 1: Accepts characters → prints them directly.  
+3. Constructor 2: Accepts strings → concatenates and prints.  
+4. In `main()`, create objects with both chars and strings.  
+
+
 
 ---
 
-### 4️ Complex Number Addition  
-1. Start.  
-2. Define class `ComplexAddition` with `real` and `imag`.  
-3. Constructor initializes values.  
-4. Define `add()` function to add & print result.  
-5. In `main()`, create objects and call `add()`.  
-6. End.  
+### 3. **Function Overloading (Calculator Example)**
+
+#### Code Summary
+Two `calc()` functions:  
+- `calc(int, int)` → performs addition.  
+- `calc(int, int, int)` → performs subtraction.  
+
+#### Algorithm
+1. Define two functions with same name `calc` but different parameter lists.  
+2. First function: add two numbers and print result.  
+3. Second function: subtract two numbers and print result.  
+4. In `main()`, call both versions with appropriate arguments.  
+
+
 
 ---
 
-### 5️ String Concatenation Using Constructor & Method  
-1. Start.  
-2. Define class `Name` with two strings.  
-3. Constructor initializes `name1` & `name2`.  
-4. Define method `add()` → concatenate & print.  
-5. In `main()`, create object and call `add()`.  
-6. End.  
+### 4. **Operator Overloading (Complex Number Addition – Manual)**
+
+#### Code Summary
+Class `ComplexAddition` stores real and imaginary parts.  
+- Constructor prints the number.  
+- A function `add()` adds two complex numbers manually.  
+
+#### Algorithm
+1. Define class `ComplexAddition` with variables `real` and `imag`.  
+2. Constructor initializes and prints complex number.  
+3. Define `add()` to print sum of real and imaginary parts.  
+4. In `main()`, create two complex numbers.  
+5. Add them and display result.  
+
 
 ---
 
-##  Conclusion  
-- **Constructor Overloading** → Flexibility in object creation.  
-- **Function Overloading** → Reuse function names with different inputs.  
-- **Operator Overloading** → Make objects behave like built-in types.  
+### 5. **Operator Overloading (String Concatenation with `+`)**
 
-Together, they demonstrate **compile-time polymorphism**, improving **flexibility, readability, and usability** in C++ programming.  
+#### Code Summary
+Class `Name` stores two strings.  
+- Operator `+` is overloaded to concatenate names in a customized way.  
+
+#### Algorithm
+1. Define class `Name` with two string members.  
+2. Constructor initializes names.  
+3. Overload `+` operator to return customized string.  
+4. In `main()`, create objects and concatenate them using `+`.  
+
 
 ---
+
+##  Conclusion
+
+Overloading in C++ is one of the most powerful and widely used features of **Polymorphism**. It allows programmers to use the same name for multiple operations, making code **cleaner, more intuitive, and easier to maintain**.  
+
+- **Function Overloading** demonstrates how the same function can work with different numbers or types of parameters, ensuring flexibility without writing separate names for similar tasks.  
+- **Constructor Overloading** provides multiple ways to initialize objects, giving developers the ability to handle different initialization requirements smoothly.  
+- **Operator Overloading** bridges the gap between built-in and user-defined data types, making custom classes behave like native types (for example, adding complex numbers or concatenating strings with `+`).  
+
+By applying overloading:  
+- Programs become **easier to understand**, since similar tasks share the same name.  
+- Code **redundancy is reduced**, as multiple versions of a function or constructor coexist under one name.  
+- Developers gain the ability to **extend the language features** for their own data types, which makes object-oriented programming in C++ more powerful.  
+
+In short, overloading enhances **flexibility, readability, and efficiency** in programming, and it forms a strong foundation for writing professional and scalable C++ applications.
+
+
+
+
+
+
+
+
 
 
 
